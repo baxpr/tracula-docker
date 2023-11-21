@@ -113,3 +113,8 @@ RUN apt-get update -qq \
     && unzip ants.zip -d /opt \
     && mv /opt/ants-2.4.3/bin/* /opt/ants-2.4.3 \
     && rm ants.zip
+
+
+# Freesurfer's stem2fname modified to avoid some kind of shell bug
+COPY stem2fname /opt/freesurfer-7.2.0/bin/stem2fname
+

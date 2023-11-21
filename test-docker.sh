@@ -4,6 +4,7 @@ docker run \
 --mount type=bind,src=$(pwd -P),dst=/wkdir \
 --mount type=bind,src=$(pwd -P)/INPUTS,dst=/INPUTS \
 --mount type=bind,src=$(pwd -P)/OUTPUTS,dst=/OUTPUTS \
+--mount type=bind,src=$(pwd -P)/freesurfer_license.txt,dst=/opt/freesurfer-7.2.0/.license \
 tracula-docker-test:latest \
 bash -c ' \
 ls /INPUTS && \
