@@ -5,7 +5,7 @@ singularity exec --cleanenv --contain \
 --bind $(pwd -P)/INPUTS:/INPUTS \
 --bind $(pwd -P)/OUTPUTS:/OUTPUTS \
 --bind $(pwd -P)/freesurfer_license.txt:/opt/freesurfer-7.2.0/.license \
-baxterprogers/tracula-docker:v0.0.0 \
+tracula-docker_v0.0.0.sif \
 bash -c ' \
 ls /INPUTS && \
 ls /OUTPUTS && \
