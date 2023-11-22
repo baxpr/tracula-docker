@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-docker run --platform linux/amd64 \
---mount type=bind,src=$(pwd -P),dst=/wkdir \
---mount type=bind,src=$(pwd -P)/INPUTS,dst=/INPUTS \
---mount type=bind,src=$(pwd -P)/OUTPUTS,dst=/OUTPUTS \
---mount type=bind,src=$(pwd -P)/freesurfer_license.txt,dst=/opt/freesurfer-7.2.0/.license \
-tracula-docker-test:latest \
+singularity exec --cleanenv --contain \
+--bind $(pwd -P):/wkdir \
+--bind $(pwd -P)/INPUTS:/INPUTS \
+--bind $(pwd -P)/OUTPUTS:/OUTPUTS \
+--bind $(pwd -P)/freesurfer_license.txt:/opt/freesurfer-7.2.0/.license \
+baxterprogers/tracula-docker:v0.0.0 \
 bash -c ' \
 ls /INPUTS && \
 ls /OUTPUTS && \
