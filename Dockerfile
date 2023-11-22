@@ -118,3 +118,6 @@ RUN apt-get update -qq \
 # Freesurfer's stem2fname modified to avoid some kind of shell bug
 COPY stem2fname /opt/freesurfer-7.2.0/bin/stem2fname
 
+
+# Freesurfer needs sh to be bash not dash
+RUN ln -sf bash /bin/sh
